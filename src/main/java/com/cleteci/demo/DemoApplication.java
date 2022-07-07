@@ -1,11 +1,13 @@
 package com.cleteci.demo;
 
+import org.jsondoc.spring.boot.starter.EnableJSONDoc;
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
+@EnableJSONDoc
 public class DemoApplication {
 
 	public static void main(String[] args) {
