@@ -50,7 +50,7 @@ public class LibroService {
     public ResponseEntity<Object> eliminarUnLibro(Long id){
         if(libroRepository.existsById(id)){
             libroRepository.deleteById(id);
-            return new ResponseEntity<>(HttpStatus.OK);
+            return new ResponseEntity<>( libroRepository.findAll().stream().map(this::mapFromEntitie).collect(Collectors.toList()) ,HttpStatus.OK);
         }else{
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
